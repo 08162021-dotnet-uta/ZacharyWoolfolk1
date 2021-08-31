@@ -1,19 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfStore xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Store xsi:type="BookStore">
-    <Name>Hobby Stop Books</Name>
-    <Location>123 Street St, City, ST 70000</Location>
+  <Store xsi:type="AthleticStore">
+    <Name>Athletic Store</Name>
   </Store>
-  <Store xsi:type="BookStore">
-    <Name>Hobby Stop Comics</Name>
-    <Location>345 Street Blvd, Town, ST 70000</Location>
+  <Store xsi:type="GroceryStore">
+    <Name>Grocery Store</Name>
   </Store>
-  <Store xsi:type="GameStore">
-    <Name>Hobby Stop Games</Name>
-    <Location>489 Drive St, City, ST 70000</Location>
+  <Store xsi:type="OnlineStore">
+    <Name>Online Store</Name>
   </Store>
-  <Store xsi:type="GameStore">
-    <Name>Hobby Stop Video</Name>
-    <Location>111 Drive Dr, Town, ST 70000</Location>
-  </Store>  
 </ArrayOfStore>

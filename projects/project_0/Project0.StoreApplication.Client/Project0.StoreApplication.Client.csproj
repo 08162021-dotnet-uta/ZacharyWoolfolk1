@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\Project0.StoreApplication.Domain\Project0.StoreApplication.Domain.csproj" />
-    <ProjectReference Include="..\Project0.StoreApplication.Storage\Project0.StoreApplication.Storage.csproj" />
+    <ProjectReference Include="C:\Users\Zachary\Source\Repos\08162021-dotnet-uta\ZacharyWoolfolk1\projects\project_0\Project0.StoreApplication.Storage\Project0.StoreApplication.Storage.csproj" />
+    <ProjectReference Include="C:\Users\Zachary\Source\Repos\08162021-dotnet-uta\ZacharyWoolfolk1\projects\project_0\Project0.StoreApplication.Domain\Project0.StoreApplication.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>

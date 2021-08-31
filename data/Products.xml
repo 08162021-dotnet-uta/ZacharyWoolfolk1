@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfProduct xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Product xsi:type="Book">
-    <Name>Novel</Name>
-    <Price>16.99</Price>
-  </Product>
-  <Store xsi:type="Book">
-    <Name>Comic</Name>
-    <Price>5.99</Price>
-  </Product>
-  <Product xsi:type="Game">
-    <Name>Board Game</Name>
-    <Price>44.99</Price>
-  </Product>
-  <Product xsi:type="Game">
-    <Name>Video Game</Name>
-    <Price>59.99</Price>
-  </Product>  
+	<Product>
+		<Name>Candy Bar</Name>
+		<Price>0.99</Price>
+	</Product>
+	<Product>
+		<Name>Backpack</Name>
+		<Price>14.99</Price>
+	</Product>
 </ArrayOfProduct>
