@@ -14,5 +14,10 @@ namespace Project0.StoreApplication.Domain.Models
     public DateTime OrderDate { get; set; }
     public Store Store { get; set; }
     public List<Product> Products { get; set; }
+
+    public Order()
+    {
+      Products = new List<Product>();
+    }
   }
 }

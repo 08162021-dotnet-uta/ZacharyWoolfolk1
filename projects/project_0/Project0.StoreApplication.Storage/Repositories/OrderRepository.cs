@@ -32,7 +32,7 @@ namespace Project0.StoreApplication.Storage.Repositories
       return _dataAdapter.Orders.FromSqlRaw("SELECT * FROM Store.[Order];").ToList();
     }
 
-    public Order Update()
+    public void Update(List<Order> newList)
     {
       throw new System.NotImplementedException();
     }

@@ -54,7 +54,7 @@ namespace Project0.StoreApplication.Storage.Repositories
     /// 
     /// </summary>
     /// <returns></returns>
-    public Store Update()
+    public void Update(List<Store> newList)
     {
       throw new System.NotImplementedException();
     }

@@ -35,7 +35,7 @@ namespace Project0.StoreApplication.Storage.Repositories
             return _fileAdapter.ReadFromFile<Product>(_path);
         }
 
-        public Product Update()
+        public void Update(List<Product> newList)
         {
             throw new System.NotImplementedException();
         }

@@ -54,9 +54,9 @@ namespace Project0.StoreApplication.Storage.Repositories
     /// 
     /// </summary>
     /// <returns></returns>
-    public Customer Update()
+    public void Update(List<Customer> Customers)
     {
-      throw new System.NotImplementedException();
+      _fileAdapter.WriteToFile<Customer>(_path, Customers);
     }
   }
 }

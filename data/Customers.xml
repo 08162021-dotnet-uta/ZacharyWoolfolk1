@@ -1,21 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfCustomer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Customer>
-    <Name>Fred</Name>
-    <ArrayOfOrder>
-      <Order />
-    </ArrayOfOrder>
-  </Customer>
-	<Customer>
-    <Name>John</Name>
-    <ArrayOfOrder>
-      <Order />
-    </ArrayOfOrder>
-  </Customer>
-	<Customer>
-    <Name>Thomas</Name>
-    <ArrayOfOrder>
-      <Order />
-    </ArrayOfOrder>
+    <CustomerId>0</CustomerId>
+    <Name>Demo User</Name>
+    <Orders />
   </Customer>
 </ArrayOfCustomer>

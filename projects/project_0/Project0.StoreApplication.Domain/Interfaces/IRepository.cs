@@ -30,6 +30,6 @@ namespace Project0.StoreApplication.Domain.Interfaces
     /// 
     /// </summary>
     /// <returns></returns>
-    T Update();
+    void Update(List<T> newList);
   }
 }

@@ -43,5 +43,11 @@ namespace Project0.StoreApplication.Client.Singletons
       _customerRepository.Insert(customer);
       Customers = _customerRepository.Select();
     }
+
+    public void Change(List<Customer> newList)
+    {
+      _customerRepository.Update(newList);
+      Customers = _customerRepository.Select();
+    }
   }
 }
