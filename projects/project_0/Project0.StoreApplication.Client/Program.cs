@@ -9,6 +9,8 @@ using Project0.StoreApplication.Storage;
 using Project0.StoreApplication.Storage.Adapters;
 using Serilog;
 
+//Much of the code in this project is based on what was shown in lectures by Fred Belotte
+
 namespace Project0.StoreApplication.Client
 {
   /// <summary>
@@ -31,7 +33,7 @@ namespace Project0.StoreApplication.Client
     {
       Log.Logger = new LoggerConfiguration().WriteTo.File(_logFilePath).CreateLogger();
 
-            //HelloSQL();
+
             Run();
     }
 
@@ -71,7 +73,6 @@ namespace Project0.StoreApplication.Client
         order.Products.Add(product);
         _orderSingleton.Add(order);
         customer.Orders.Add(order);
-        //_customerSingleton.Change(_customerSingleton.Customers);
 
         Console.WriteLine("Thank you for your purchase!");
       }
@@ -118,15 +119,5 @@ namespace Project0.StoreApplication.Client
       return selected - 1;
     }
 
-        //private static void HelloSQL()
-        //{
-        //    var def = new DemoEF();
-
-        //    foreach (var item in def.GetProducts())
-        //    {
-        //        Console.WriteLine(item);
-        //    }
-
-        //}
     }
 }
