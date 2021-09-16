@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>247e5daa-6a23-4574-a3d2-6a5ac8a4e5e6</UserSecretsId>
+    <StartupObject>StoreAppUI.Program</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StoreAppBusinessLayer\StoreAppBusinessLayer.csproj" />
+    <ProjectReference Include="..\StoreAppModelsLayer\StoreAppModelsLayer.csproj" />
+  </ItemGroup>
+
+</Project>

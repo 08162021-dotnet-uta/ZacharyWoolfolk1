@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace StoreAppDBContextLayer.EFModels
+namespace StoreAppModelsLayer.EFModels
 {
     public partial class StoreInventory
     {
