@@ -8,7 +8,7 @@ using StoreAppModelsLayer.EFModels;
 
 namespace StoreAppBusinessLayer
 {
-  class LocationManager : IManager<Location>
+  public class LocationManager : IManager<Location>
   {
     private static LocationManager MLocation;
     private readonly IRepository<Location> RLocation;
