@@ -28,12 +28,19 @@ const storeform = document.querySelector(".storeform");
                 console.log(data)
                 const lol = document.querySelector('.listofstores');
                 for (let x = 0; x < data.length; x++) {
-                    lol.innerHTML += `<a href="#" onclick="SeeProducts()">${data[x].location1}</a><br>`;
+                    lol.innerHTML += `<a href="#" onclick="SeeProducts(${data[x].storeId})">${data[x].location1}</a><br>`;
                 }
+                //.then(res => {
+                //    console.log(res);
+                //    //store the id, if found, in the sessionStorage
+                //    sessionStorage.setItem('user', JSON.stringify({ res }));
+                //    console.log(sessionStorage.user);
             });
 }
 
-function SeeProducts() {
+function SeeProducts(id) {
+    console.log(id);
+    sessionStorage.setItem('store', JSON.stringify(id));
     location.href = "products.html";
 }
 

@@ -55,6 +55,8 @@ namespace StoreAppUI
       services.AddScoped<ICustomerManager, CustomerManager>();
       services.AddScoped<IRepository<Location>, LocationRepository>();
       services.AddScoped<IManager<Location>, LocationManager>();
+      services.AddScoped<IManager<Product>, ProductManager>();
+      services.AddScoped<IProductRepository, ProductRepository>();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
