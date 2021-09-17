@@ -108,5 +108,27 @@ namespace StoreAppUI.Controllers
     //    return View();
     //  }
     //}
+
+    /// <summary>
+    /// Takes a location name and returns a location if one is found.
+    /// Otherwise, returns NotFound();
+    /// </summary>
+    /// <param name="location"></param>
+    /// <returns></returns>
+    [HttpGet("store/{name}")]
+    public async Task<ActionResult<Location>> Enter(string location)
+    {
+      if (!ModelState.IsValid) return BadRequest();
+
+      Location l = new Location() { Location1 = location };
+      //send fname and lname into a method of business layer to check DB for customer
+      Location chosenLocation = await _locationManager.GetElement(l.Location1);
+      if (chosenLocation == null)
+      {
+        return NotFound();
+      }
+
+      return Ok(chosenLocation);
+    }
   }
 }
