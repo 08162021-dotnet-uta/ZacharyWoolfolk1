@@ -9,7 +9,8 @@ namespace StoreAppModelsLayer.Interfaces
 {
   public interface ICustomerManager : IManager<Customer>
   {
-    Customer LoginCustomer(Customer customer);
-    Customer RegisterCustomer(Customer customer);
+    Task<Customer> GetCustomer(string fname, string lname);
+    Task<Customer> LoginCustomer(Customer customer);
+    Task<Customer> RegisterCustomer(Customer customer);
   }
 }

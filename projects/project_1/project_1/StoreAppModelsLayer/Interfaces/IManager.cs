@@ -18,7 +18,7 @@ namespace StoreAppModelsLayer.Interfaces
 
     public void Add(T item);
 
-    public T GetItem(string identifier);
+    public Task<T> GetElement(string identifier);
   }
 }
 

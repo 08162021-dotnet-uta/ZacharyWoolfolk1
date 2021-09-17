@@ -1,8 +1,4 @@
-﻿////function SeeCustomers() {
-////    location.href = "list-of-customers.html";
-////}
-
-const button = document.querySelector('.weatherlist');
+﻿const button = document.querySelector('.weatherlist');
 const listofcustomers = document.querySelector('.listofcustomers');
 const randombutton = document.querySelector(".randombutton");
 

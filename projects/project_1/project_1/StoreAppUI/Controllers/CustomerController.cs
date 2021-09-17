@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using StoreAppModelsLayer.Interfaces;
 using StoreAppModelsLayer.EFModels;
+using Microsoft.Extensions.Logging;
 
 namespace StoreAppUI.Controllers
 {
@@ -14,10 +15,14 @@ namespace StoreAppUI.Controllers
   public class CustomerController : Controller
   {
     private readonly IRepository<Customer> _customerRepo;
+    private readonly ICustomerManager _customerManager;
+    private readonly ILogger<CustomerController> _logger;
 
-    public CustomerController(IRepository<Customer> cr)
+    public CustomerController(IRepository<Customer> cr, ILogger<CustomerController> logger, ICustomerManager cM)
     {
       _customerRepo = cr;
+      _customerManager = cM;
+      _logger = logger;
     }
 
     // GET: CustomerController
@@ -32,15 +37,30 @@ namespace StoreAppUI.Controllers
     public async Task<ActionResult<List<Customer>>> Details()
     {
       List<Customer> customers = await _customerRepo.Select();
+
+      //_logger.LogInformation();
+
       return customers;
     }
 
     // GET: CustomerController/Create - for conventional routing
     // Attribut routing involves using attributes to define path
-    [HttpPut("customercreate/{id}")]
-    public ActionResult Create(int id)
+
+
+    [HttpPost("register")]
+    public async Task<ActionResult<Customer>> Create(Customer c)
     {
-      return View();
+      if (!ModelState.IsValid) return BadRequest();
+
+      //Customer c = new Customer() { FirstName = fname, LastName = lname };
+      //send fname and lname into a method of business layer to check DB for customer
+      Customer cLoggedIn = await _customerManager.RegisterCustomer(c);
+      if (cLoggedIn == null)
+      {
+        return NotFound();
+      }
+
+      return Created($"~customer/{c.CustomerId}",cLoggedIn);
     }
 
     // POST: CustomerController/Create
@@ -101,5 +121,30 @@ namespace StoreAppUI.Controllers
     //    return View();
     //  }
     //}
+
+
+    /// <summary>
+    /// Takes a first and last name and returns a validated customer if one is found.
+    /// Otherwise, returns NotFound();
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="fname"></param>
+    /// <param name="lname"></param>
+    /// <returns></returns>
+    [HttpGet("login/{fname}/{lname}")]
+    public async Task<ActionResult<Customer>> Login(int id, string fname, string lname)
+    {
+      if (!ModelState.IsValid) return BadRequest();
+
+      Customer c = new Customer() { FirstName = fname, LastName = lname };
+      //send fname and lname into a method of business layer to check DB for customer
+      Customer cLoggedIn = await _customerManager.LoginCustomer(c);
+      if(cLoggedIn == null)
+      {
+        return NotFound();
+      }
+
+      return Ok(cLoggedIn);
+    }
   }
 }

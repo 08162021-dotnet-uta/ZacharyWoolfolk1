@@ -52,6 +52,8 @@ namespace StoreAppUI
       //registering classes with the DI system
       services.AddScoped<IRepository<Customer>, CustomerRepository>();
       services.AddScoped<IRepository<Product>, ProductRepository>();
+      services.AddScoped<ICustomerManager, CustomerManager>();
+      services.AddScoped<IRepository<Location>, LocationRepository>();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

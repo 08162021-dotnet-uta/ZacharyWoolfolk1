@@ -17,6 +17,7 @@ namespace StoreAppBusinessLayer
     public CustomerManager(IRepository<Customer> cr)
     {
       RCustomer = cr;
+      items = Task.Run(() => RCustomer.Select()).Result;
     }
 
     public List<Customer> items { get; set; }
@@ -45,7 +46,7 @@ namespace StoreAppBusinessLayer
       items = await RCustomer.Select();
     }
 
-    public Customer GetItem(string fname)
+    public async Task<Customer> GetElement(string fname)
     {
       Customer customer = null;
       foreach(Customer c in items)
@@ -58,21 +59,36 @@ namespace StoreAppBusinessLayer
       return customer;
     }
 
-    public Customer LoginCustomer(Customer customer)
+    public async Task<Customer> GetCustomer(string fname, string lname)
     {
-      if (items.Contains(customer))
+      Customer customer = null;
+      foreach (Customer c in items)
       {
-        return customer;
+        if (c.FirstName == fname && c.LastName == lname)
+        {
+          customer = c;
+          break;
+        }
       }
-      else
-      {
-        return null;
-      }
+      return customer;
     }
 
-    public Customer RegisterCustomer(Customer customer)
+    public async Task<Customer> LoginCustomer(Customer customer)
     {
-      Add(customer);
+      //if (items.Contains(customer))
+      //{
+      //  return customer;
+      //}
+      //else
+      //{
+      //  return null;
+      //}
+      return await GetCustomer(customer.FirstName, customer.LastName);
+    }
+
+    public async Task<Customer> RegisterCustomer(Customer customer)
+    {
+      await Task.Run(() => Add(customer));
       return customer;
     }
   }
