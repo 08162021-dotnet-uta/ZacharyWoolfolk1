@@ -35,7 +35,8 @@ namespace StoreAppDBContextLayer
 
     public async Task<List<Order>> Select()
     {
-      return await _context.Orders.FromSqlRaw<Order>("SELECT * FROM Orders;").ToListAsync();
+      List<Order> orders = await _context.Orders.FromSqlRaw<Order>("SELECT * FROM Orders;").ToListAsync();
+      return orders;
     }
 
     public void Update(List<Order> newList)

@@ -54,6 +54,7 @@ namespace StoreAppUI.Controllers
       for(int i = 0; i < products.Count; i++)
       {
         ProductListing listing = new ProductListing();
+        listing.ProductId = products[i].ProductId;
         listing.ProductName = products[i].ProductName;
         listing.ProductDescription = products[i].ProductDescription;
         listing.ProductPrice = products[i].ProductPrice;

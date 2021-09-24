@@ -13,6 +13,6 @@
 
 function MakeOrder (id) {
     console.log(id)
-    sessionStorage.setItem('product', JSON.stringify(id));
+    sessionStorage.setItem('product', id);
     location.href = "order.html";
 }

@@ -1,4 +1,4 @@
-﻿const custId = JSON.parse(sessionStorage.getItem('user')).customerId;
+﻿const custId = JSON.parse(sessionStorage.getItem('user')).res.customerId;
 const prodId = JSON.parse(sessionStorage.getItem('product'));
 const locId = JSON.parse(sessionStorage.getItem('store'));
 const prodPrice = JSON.parse(sessionStorage.getItem('price'));

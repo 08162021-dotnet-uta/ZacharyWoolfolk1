@@ -34,7 +34,7 @@ namespace StoreAppUI.Controllers
 
     // GET: LocationController/Details/5
     [HttpGet("Locationlist")]
-    public async Task<ActionResult<List<Location>>> Details(int id)
+    public async Task<ActionResult<List<Location>>> Details()
     {
       List<Location> locations = await _locationRepo.Select();
 

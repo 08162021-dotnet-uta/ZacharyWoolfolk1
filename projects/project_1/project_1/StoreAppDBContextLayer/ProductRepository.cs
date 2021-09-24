@@ -33,7 +33,7 @@ namespace StoreAppDBContextLayer
 
     public async Task<List<Product>> GetStoreProducts(int storeId)
     {
-      List<Product> listing = await _context.Products.FromSqlRaw<Product>("SELECT Products.* FROM Products INNER JOIN StoreInventory ON Products.ProductId = StoreInventory.ProductId INNER JOIN Locations ON StoreInventory.StoreId = Locations.StoreId WHERE Locations.StoreId = {0};", storeId).ToListAsync(); ;
+      List<Product> listing = await _context.Products.FromSqlRaw<Product>("SELECT DISTINCT Products.* FROM Products INNER JOIN StoreInventory ON Products.ProductId = StoreInventory.ProductId INNER JOIN Locations ON StoreInventory.StoreId = Locations.StoreId WHERE Locations.StoreId = {0};", storeId).ToListAsync(); ;
       return listing;
     }
 
