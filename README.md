@@ -38,3 +38,6 @@ The leftmost button simply displays a list of all registered customers.  The bac
 The login and register buttons both bring the user to a name entry page.  The register page, however, enters the given name into the database, while the login page checks to make sure that the given name is already in the database.  Both pages lead to a store selection page.
 
 On the store selection page is a list of hyperlinks.  Clicking on one takes the user to the products page for that particular store, where a product can be selected from another list of hyperlinks.  Clicking on one takes the user to another page to confirm the order.  After confirming, the user can use a button on the next page to return to the original page and start the process over if they wish.
+
+## License
+This project uses the following license: [MIT License](https://github.com/08162021-dotnet-uta/ZacharyWoolfolk1/blob/main/LICENSE).
