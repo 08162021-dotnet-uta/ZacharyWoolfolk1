@@ -25,6 +25,8 @@ To-do list:
 
 ## Getting Started
 Git clone command: git clone https://github.com/08162021-dotnet-uta/ZacharyWoolfolk1.git
+
 In Microsoft SQL Server Management Studio, the database "StoreApplicationDB" must be created.
+
 Then the commands in [DDL_P1.sql](https://github.com/08162021-dotnet-uta/ZacharyWoolfolk1/blob/main/DDL_P1.sql) must be run.
 
